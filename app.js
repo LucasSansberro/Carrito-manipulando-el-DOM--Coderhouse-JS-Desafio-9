@@ -44,40 +44,37 @@ let precioFinal = 0
 
 //Agregamos las listas de precios al DOM
 const divListaPrecios = document.createElement("div")
-divListaPrecios.setAttribute("style", "display:flex;justify-content:space-evenly")
+divListaPrecios.classList.add("divListaPrecios")
 document.body.append(divListaPrecios)
 function creadorDeCuadros (eleccion){
 	let eleccionCuadro = document.createElement("ul")
-	eleccionCuadro.setAttribute("style", "border: black 1px solid;padding:20px; list-style:none;")
+	eleccionCuadro.classList.add("cuadroListaPrecio")
 	for (const item of eleccion){
-		eleccionCuadro.innerHTML += `<li style="padding:10px;"><button id="${item}"> ${item}</button></li>`
+		eleccionCuadro.innerHTML += `<li class="itemListaPrecio""><button id="${item}"> ${item}</button></li>`
 	}
 	divListaPrecios.appendChild(eleccionCuadro)}
 creadorDeCuadros(rustica) ; creadorDeCuadros(cartone) ; creadorDeCuadros(cuero)
 
 //Agregamos al DOM los div de los elementos inferiores
 const divResultados = document.createElement("div")
-divResultados.setAttribute("style", "display:flex;justify-content:space-evenly;")
+divResultados.classList.add("divResultados")
 document.body.append(divResultados)
 
 const divCarrito = document.createElement("div")
-divCarrito.setAttribute("style", "border: black 1px solid;width:25%;border-radius:20px;"+
-"display:flex;justify-content:center;align-items:center")
+divCarrito.classList.add("divCarrito")
 divResultados.appendChild(divCarrito)
 
 const divBotones = document.createElement("div")
-divBotones.setAttribute("style", "border: black 1px solid;padding:20px;width:25%;" +
-"border-radius:20px;height:75px;display:flex;flex-direction:column;justify-content:space-between")
+divBotones.classList.add("divBotones")
 divResultados.appendChild(divBotones)
 
 const divPrecioFinal = document.createElement("div")
-divPrecioFinal.setAttribute("style", "border: black 1px solid;width:25%;border-radius:20px;"+
-"height:100px;display:flex;justify-content:center;align-items:center")
+divPrecioFinal.classList.add("divBotones")
 divResultados.appendChild(divPrecioFinal)
 
 //Agregamos un evento a los botones para que reaccionen al click
 let listaCarrito = document.createElement("ul")
-listaCarrito.setAttribute("style", "list-style:none;")
+listaCarrito.classList.add("listaCarrito")
 divCarrito.appendChild(listaCarrito)
 function botonera (eleccion) {
 	for (const item of eleccion){
